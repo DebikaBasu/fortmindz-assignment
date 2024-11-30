@@ -6,7 +6,6 @@ export const fetchEmployees = createAsyncThunk(
         try {
             const response = await fetch('https://interviewtesting.onrender.com/v1/users/employee/list');
             const data = await response.json();
-            console.log(data);
             if (!response.ok) throw new Error(data.message || 'Failed to fetch employees');
             return data.data;
         } catch (error) {
